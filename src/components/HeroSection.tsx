@@ -13,7 +13,7 @@ const HeroSection = () => {
     <section id="home" className="hero-section">
       <div className="absolute inset-0 z-0">
         <img 
-          src="https://images.unsplash.com/photo-1486718448742-163732cd1544" 
+          src="https://images.unsplash.com/photo-1482938289607-e9573fc25ebb" 
           alt="Azhizen Media photography hero" 
           className="w-full h-full object-cover"
         />

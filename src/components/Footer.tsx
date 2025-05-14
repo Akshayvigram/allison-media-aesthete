@@ -10,7 +10,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {/* Logo and Description */}
           <div>
-            <h3 className="font-playfair text-2xl mb-6">Allison Media</h3>
+            <h3 className="font-playfair text-2xl mb-6">Azhizen Media</h3>
             <p className="text-allison-accent mb-6 leading-relaxed">
               Premium photography and media services for discerning clients who demand excellence in visual storytelling.
             </p>
@@ -60,7 +60,7 @@ const Footer = () => {
         </div>
         
         <div className="border-t border-gray-800 mt-12 pt-8 text-center">
-          <p>&copy; {currentYear} Allison Media. All rights reserved.</p>
+          <p>&copy; {currentYear} Azhizen Media. All rights reserved.</p>
         </div>
       </div>
     </footer>
