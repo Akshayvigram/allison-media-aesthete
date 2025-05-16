@@ -40,8 +40,12 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-4 md:px-6 flex justify-between items-center">
         <AnimatedElement type="fade-in">
-          <div className="text-foreground font-sans text-2xl font-bold tracking-tight">
-            Azhizen
+          <div className="h-10">
+            <img 
+              src="/lovable-uploads/1cda808c-60e3-4e90-93cd-69f93a6d787b.png" 
+              alt="Azhizen Logo" 
+              className="h-full object-contain"
+            />
           </div>
         </AnimatedElement>
 
