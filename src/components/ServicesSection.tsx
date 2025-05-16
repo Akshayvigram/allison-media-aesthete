@@ -111,9 +111,9 @@ const ServicesSection = () => {
                     <div className="absolute inset-0 bg-black/70 z-10"></div>
                   </div>
                   
-                  <div className="relative z-20 transition-transform duration-500 group-hover:-translate-y-4">
-                    <service.icon className="h-16 w-16 mb-6 text-azhizen-dark transition-all duration-500 group-hover:text-white" />
-                    <h3 className="text-xl font-medium mb-4 transition-all duration-500 group-hover:text-white">{service.title}</h3>
+                  <div className="relative z-20 transition-transform duration-500 group-hover:opacity-0">
+                    <service.icon className="h-16 w-16 mb-6 text-azhizen-dark transition-all duration-500" />
+                    <h3 className="text-xl font-medium mb-4">{service.title}</h3>
                   </div>
                   
                   <div className="absolute inset-0 z-30 flex items-center justify-center p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">

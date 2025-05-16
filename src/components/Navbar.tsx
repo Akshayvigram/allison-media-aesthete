@@ -34,7 +34,7 @@ const Navbar = () => {
     <nav 
       className={`fixed w-full z-50 transition-all duration-500 ${
         isScrolled 
-          ? 'bg-background/90 backdrop-blur-md py-3 shadow-sm' 
+          ? 'bg-black py-3 shadow-sm' 
           : 'bg-transparent py-6'
       }`}
     >
@@ -48,28 +48,28 @@ const Navbar = () => {
         {/* Desktop Navigation */}
         <div className="hidden md:flex space-x-1">
           <AnimatedElement type="fade-in" delay="delay-100">
-            <button onClick={() => scrollToSection('home')} className={`nav-link ${isScrolled ? 'text-black' : 'text-white'}`}>Home</button>
+            <button onClick={() => scrollToSection('home')} className={`nav-link ${isScrolled ? 'text-white' : 'text-white'}`}>Home</button>
           </AnimatedElement>
           <AnimatedElement type="fade-in" delay="delay-200">
-            <button onClick={() => scrollToSection('about')} className={`nav-link ${isScrolled ? 'text-black' : 'text-white'}`}>About</button>
+            <button onClick={() => scrollToSection('about')} className={`nav-link ${isScrolled ? 'text-white' : 'text-white'}`}>About</button>
           </AnimatedElement>
           <AnimatedElement type="fade-in" delay="delay-300">
-            <button onClick={() => scrollToSection('services')} className={`nav-link ${isScrolled ? 'text-black' : 'text-white'}`}>Services</button>
+            <button onClick={() => scrollToSection('services')} className={`nav-link ${isScrolled ? 'text-white' : 'text-white'}`}>Services</button>
           </AnimatedElement>
           <AnimatedElement type="fade-in" delay="delay-400">
-            <button onClick={() => scrollToSection('portfolio')} className={`nav-link ${isScrolled ? 'text-black' : 'text-white'}`}>Portfolio</button>
+            <button onClick={() => scrollToSection('portfolio')} className={`nav-link ${isScrolled ? 'text-white' : 'text-white'}`}>Portfolio</button>
           </AnimatedElement>
           <AnimatedElement type="fade-in" delay="delay-500">
-            <button onClick={() => scrollToSection('testimonials')} className={`nav-link ${isScrolled ? 'text-black' : 'text-white'}`}>Testimonials</button>
+            <button onClick={() => scrollToSection('testimonials')} className={`nav-link ${isScrolled ? 'text-white' : 'text-white'}`}>Testimonials</button>
           </AnimatedElement>
           <AnimatedElement type="fade-in" delay="delay-600">
-            <button onClick={() => scrollToSection('contact')} className={`nav-link ${isScrolled ? 'text-black' : 'text-white'}`}>Contact</button>
+            <button onClick={() => scrollToSection('contact')} className={`nav-link ${isScrolled ? 'text-white' : 'text-white'}`}>Contact</button>
           </AnimatedElement>
         </div>
 
         {/* Mobile Navigation Trigger */}
         <button 
-          className={`md:hidden ${isScrolled ? 'text-black' : 'text-white'}`}
+          className="md:hidden text-white"
           onClick={() => setIsOpen(!isOpen)}
         >
           {isOpen ? <X size={24} /> : <Menu size={24} />}
