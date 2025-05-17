@@ -63,9 +63,6 @@ const Navbar = () => {
           <AnimatedElement type="fade-in" delay="delay-400">
             <button onClick={() => scrollToSection('portfolio')} className={`nav-link ${isScrolled ? 'text-white' : 'text-white'}`}>Portfolio</button>
           </AnimatedElement>
-          <AnimatedElement type="fade-in" delay="delay-450">
-            <button onClick={() => scrollToSection('media')} className={`nav-link ${isScrolled ? 'text-white' : 'text-white'}`}>Media</button>
-          </AnimatedElement>
           <AnimatedElement type="fade-in" delay="delay-500">
             <button onClick={() => scrollToSection('testimonials')} className={`nav-link ${isScrolled ? 'text-white' : 'text-white'}`}>Testimonials</button>
           </AnimatedElement>
@@ -94,7 +91,6 @@ const Navbar = () => {
           <button onClick={() => scrollToSection('about')} className="text-2xl text-foreground hover:text-accent transition-colors">About</button>
           <button onClick={() => scrollToSection('services')} className="text-2xl text-foreground hover:text-accent transition-colors">Services</button>
           <button onClick={() => scrollToSection('portfolio')} className="text-2xl text-foreground hover:text-accent transition-colors">Portfolio</button>
-          <button onClick={() => scrollToSection('media')} className="text-2xl text-foreground hover:text-accent transition-colors">Media</button>
           <button onClick={() => scrollToSection('testimonials')} className="text-2xl text-foreground hover:text-accent transition-colors">Testimonials</button>
           <button onClick={() => scrollToSection('contact')} className="text-2xl text-foreground hover:text-accent transition-colors">Contact</button>
         </div>
