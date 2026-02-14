@@ -80,7 +80,7 @@ const ContactSection = () => {
       });
 
       // 2️⃣ Send Slack notification via backend
-      const response = await fetch("http://localhost:5000/api/notify-slack", {
+      const response = await fetch("https://mediapage-backend.onrender.com/api/notify-slack", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
