@@ -1,18 +1,4 @@
 import {
-  FcCamera,
-  FcMultipleCameras,
-  FcPicture,
-  FcVideoFile,
-  FcAddImage,
-  FcBarChart,
-  FcCustomerSupport,
-  FcShare,
-  FcSearch,
-  FcAdvertising,
-  FcSalesPerformance
-} from "react-icons/fc";
-
-import {
   FaCameraRetro,
   FaVideo,
   FaPaintBrush,
@@ -25,9 +11,6 @@ import {
   FaBullhorn,
   FaUserPlus
 } from "react-icons/fa";
-
-import { useEffect } from 'react';
-import AnimatedElement from './AnimatedElement';
 
 const services = [
   {
@@ -121,28 +104,10 @@ const services = [
 ];
 
 const ServicesSection = () => {
-  useEffect(() => {
-    const animateOnScroll = () => {
-      const elements = document.querySelectorAll('.service-card');
-      elements.forEach((element, index) => {
-        const rect = element.getBoundingClientRect();
-        if (rect.top <= window.innerHeight * 0.85) {
-          setTimeout(() => {
-            element.classList.add('visible');
-          }, index * 100);
-        }
-      });
-    };
-
-    window.addEventListener('scroll', animateOnScroll);
-    animateOnScroll();
-
-    return () => window.removeEventListener('scroll', animateOnScroll);
-  }, []);
-
   return (
     <section id="services" className="py-20 bg-muted/30">
       <div className="container mx-auto px-4 md:px-6">
+
         <div className="text-center mb-12">
           <h2 className="text-3xl lg:text-4xl font-bold mb-4">
             Our <span className="gradient-text">Services</span>
@@ -152,36 +117,42 @@ const ServicesSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {services.map((service, index) => (
             <div
               key={index}
-              className="service-card opacity-0 translate-y-10 transition-all duration-700 group cursor-pointer bg-card rounded-xl shadow-soft hover:shadow-elegant border border-border h-[220px]"
+              className="group relative h-[250px] rounded-2xl overflow-hidden cursor-pointer shadow-md hover:shadow-xl transition-all duration-500"
             >
-              <div className="p-4 flex flex-col items-center text-center h-full relative overflow-hidden">
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <img
-                    src={service.image}
-                    alt={service.title}
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-black/70"></div>
-                </div>
+              {/* Full Image Background */}
+              <img
+                src={service.image}
+                alt={service.title}
+                className="absolute inset-0 w-full h-full object-cover"
+              />
 
-                <div className="relative z-20 group-hover:opacity-0 transition-opacity duration-500 flex flex-col items-center justify-center h-full">
-                  <service.icon className="h-8 w-8 mb-3" />
-                  <h3 className="text-sm font-semibold">{service.title}</h3>
-                </div>
+              {/* Overlay (subtle, consistent) */}
+              <div className="absolute inset-0 bg-black/40"></div>
 
-                <div className="absolute inset-0 z-30 flex items-center justify-center p-3 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <p className="text-white text-xs leading-relaxed">
-                    {service.description}
-                  </p>
+              {/* Icon + Title (always visible) */}
+              <div className="relative z-10 flex flex-col items-center justify-center h-full text-white transition-all duration-500 group-hover:-translate-y-6">
+                <div className="w-14 h-14 flex items-center justify-center rounded-xl bg-white/20 backdrop-blur-md mb-3">
+                  <service.icon className="h-6 w-6" />
                 </div>
+                <h3 className="text-lg font-semibold">{service.title}</h3>
+              </div>
+
+              {/* Description (slides up on hover, icon+title remain visible) */}
+              <div
+                className="absolute bottom-0 left-0 w-full px-6 pb-6 text-center text-white 
+                opacity-0 translate-y-6 group-hover:opacity-100 group-hover:translate-y-0 
+                transition-all duration-500 z-20"
+              >
+                <p className="text-sm leading-relaxed">{service.description}</p>
               </div>
             </div>
           ))}
         </div>
+
       </div>
     </section>
   );
